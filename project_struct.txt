@@ -1,0 +1,43 @@
+zyntra-landing/
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   ├── animations.css
+│   │   └── components/
+│   │       ├── navbar.css
+│   │       ├── hero.css
+│   │       ├── services.css
+│   │       ├── process.css
+│   │       ├── contact.css
+│   │       └── footer.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── animations.js
+│   │   ├── parallax.js
+│   │   └── form-handler.js
+│   ├── images/
+│   │   ├── logo.svg
+│   │   ├── hero-bg.jpg
+│   │   ├── process-video.mp4
+│   │   └── icons/
+│   └── fonts/
+│       ├── primary-font.woff2
+│       └── secondary-font.woff2
+├── includes/
+│   ├── header.php
+│   ├── footer.php
+│   └── db-connect.php
+├── sections/
+│   ├── hero.php
+│   ├── services.php
+│   ├── process.php
+│   ├── testimonials.php
+│   └── contact.php
+├── config/
+│   ├── database.php
+│   └── mail-config.php
+├── handlers/
+│   └── contact-form.php
+├── index.php
+└── database/
+    └── zyntra.sql

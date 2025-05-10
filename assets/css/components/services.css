@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #8860d0;
+            --secondary-color: #5680e9;
+            --accent-color: #5ab9ea;
+            --dark-bg: #121212;
+            --card-bg: rgba(25, 25, 40, 0.5);
+            --text-light: #f8f9fa;
+            --text-muted: #b0b0b0;
+            --border-radius: 12px;
+            --transition-speed: 0.4s;
+            --glow-color: rgba(90, 185, 234, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(90, 185, 234, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 75% 65%, rgba(136, 96, 208, 0.1) 0%, transparent 25%);
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        /* Services Section Styles */
+        .services-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='1' fill='%23ffffff10'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='1.5' fill='%23ffffff08'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #6495ED; /* Cornflower blue, matching the screenshot */
+            position: relative;
+        }
+
+        .services-text {
+            position: relative;
+            color: #6495ED; /* Ensure consistent color */
+            display: inline-block; /* Ensures the pseudo-element works correctly */
+            font-style: italic;
+        }
+
+        .services-text::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, transparent, #5ab9ea, transparent);
+            display: block;
+        }
+
+        .section-subtitle {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            position: relative;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            overflow: hidden;
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            min-height: 320px;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, var(--glow-color), transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.2),
+                0 0 20px var(--glow-color);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            position: relative;
+            transition: transform var(--transition-speed);
+        }
+
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(90, 185, 234, 0.1);
+            z-index: -1;
+            transition: all var(--transition-speed);
+        }
+
+        .service-card:hover .service-icon {
+            transform: translateY(-5px);
+            color: var(--primary-color);
+        }
+
+        .service-card:hover .service-icon::after {
+            transform: scale(1.2);
+            background: rgba(136, 96, 208, 0.1);
+        }
+
+        .service-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            transition: color var(--transition-speed);
+        }
+
+        .service-card:hover .service-title {
+            color: var(--accent-color);
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            transition: opacity var(--transition-speed);
+        }
+
+        .service-description em {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .service-hover-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, var(--card-bg), rgba(25, 25, 40, 0));
+            padding: 30px;
+            transform: translateY(100%);
+            transition: transform var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover .service-hover-content {
+            transform: translateY(0);
+        }
+
+        .service-card:hover .service-description {
+            opacity: 0.5;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all var(--transition-speed);
+        }
+
+        .service-features li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .service-card:hover .service-features li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover .service-features li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .service-card:hover .service-features li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .service-card:hover .service-features li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .service-card:hover .service-features li:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        /* Animation for cards entering viewport */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1100px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 25px;
+                min-height: auto;
+            }
+
+            .services-section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+        }
